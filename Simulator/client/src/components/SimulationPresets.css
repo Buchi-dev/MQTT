@@ -1,0 +1,51 @@
+.simulation-presets {
+  margin-bottom: 20px;
+}
+
+.presets-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.preset-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 15px;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  transition: all 0.2s ease;
+}
+
+.preset-item:hover {
+  border-color: #d9d9d9;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.preset-info {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.preset-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.preset-info p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .presets-container {
+    grid-template-columns: 1fr;
+  }
+} 

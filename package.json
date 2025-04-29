@@ -1,0 +1,31 @@
+{
+  "name": "mqtt-iot-simulation-system",
+  "version": "1.0.0",
+  "description": "Full-stack IoT simulation system with MQTT communication",
+  "main": "start-system.js",
+  "scripts": {
+    "start": "node start-system.js",
+    "install-all": "npm run install-simulator-server && npm run install-simulator-client && npm run install-dashboard",
+    "install-simulator-server": "cd Simulator/server && npm install",
+    "install-simulator-client": "cd Simulator/client && npm install",
+    "install-dashboard": "cd client && npm install",
+    "start-simulator-server": "cd Simulator/server && npm start",
+    "start-simulator-client": "cd Simulator/client && npm run dev",
+    "start-dashboard": "cd client && npm run dev"
+  },
+  "keywords": [
+    "iot",
+    "mqtt",
+    "react",
+    "express",
+    "websocket",
+    "dashboard",
+    "simulation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+} 

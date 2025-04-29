@@ -51,4 +51,63 @@ export const stopSimulation = async () => {
     console.error('Error stopping simulation:', error);
     throw error;
   }
+};
+
+/**
+ * Update simulation settings
+ * @param {Object} settings - Settings to update
+ * @returns {Promise} Promise with response data
+ */
+export const updateSettings = async (settings) => {
+  try {
+    const response = await api.post('/simulation/settings', settings);
+    return response.data;
+  } catch (error) {
+    console.error('Error updating settings:', error);
+    throw error;
+  }
+};
+
+/**
+ * Set manual control values
+ * @param {Object} values - Sensor values to set
+ * @param {boolean} enabled - Whether manual mode is enabled
+ * @returns {Promise} Promise with response data
+ */
+export const setManualControl = async (values, enabled = true) => {
+  try {
+    const response = await api.post('/simulation/manual', { values, enabled });
+    return response.data;
+  } catch (error) {
+    console.error('Error setting manual control:', error);
+    throw error;
+  }
+};
+
+/**
+ * Resume automatic simulation (disable manual mode)
+ * @returns {Promise} Promise with response data
+ */
+export const resumeAutomatic = async () => {
+  try {
+    const response = await api.post('/simulation/manual', { enabled: false });
+    return response.data;
+  } catch (error) {
+    console.error('Error resuming automatic mode:', error);
+    throw error;
+  }
+};
+
+/**
+ * Reset simulation to default settings
+ * @returns {Promise} Promise with response data
+ */
+export const resetSimulation = async () => {
+  try {
+    const response = await api.post('/simulation/reset');
+    return response.data;
+  } catch (error) {
+    console.error('Error resetting simulation:', error);
+    throw error;
+  }
 }; 

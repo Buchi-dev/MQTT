@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Card, Button } from './UI';
-import { startSimulation, stopSimulation, getStatus } from '../services/api';
+import { startSimulation, stopSimulation, getStatus, resetSimulation } from '../services/api';
 import './SimulatorControls.css';
 
 /**
  * SimulatorControls component for controlling the simulator
  */
-const SimulatorControls = ({ onStatusChange }) => {
+const SimulatorControls = ({ onStatusChange, isManualMode = false }) => {
   const [isRunning, setIsRunning] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -57,11 +57,36 @@ const SimulatorControls = ({ onStatusChange }) => {
     }
   };
 
+  // Handle reset button click
+  const handleReset = async () => {
+    setIsLoading(true);
+    try {
+      await resetSimulation();
+      // Refresh status
+      const status = await getStatus();
+      setIsRunning(status.simulation);
+      onStatusChange && onStatusChange(status.simulation);
+    } catch (error) {
+      console.error('Error resetting simulation:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <Card title="Simulator Controls" className="simulator-controls">
-      <div className="status-indicator">
-        <div className={`status-dot ${isRunning ? 'active' : 'inactive'}`}></div>
-        <span>Status: {isRunning ? 'Running' : 'Stopped'}</span>
+      <div className="status-indicators">
+        <div className="status-indicator">
+          <div className={`status-dot ${isRunning ? 'active' : 'inactive'}`}></div>
+          <span>Status: {isRunning ? 'Running' : 'Stopped'}</span>
+        </div>
+
+        {isManualMode && (
+          <div className="status-indicator manual-mode">
+            <div className="status-dot manual"></div>
+            <span>Manual Control: Active</span>
+          </div>
+        )}
       </div>
       
       <div className="controls-buttons">
@@ -78,6 +103,13 @@ const SimulatorControls = ({ onStatusChange }) => {
           onClick={handleStop}
         >
           Stop Simulation
+        </Button>
+        <Button 
+          variant="secondary"
+          disabled={isLoading}
+          onClick={handleReset}
+        >
+          Reset Defaults
         </Button>
       </div>
     </Card>

@@ -38,7 +38,28 @@ allow_anonymous true
 mosquitto -c mosquitto.conf
 ```
 
-## Installation and Setup
+## Quick Start (All Systems)
+
+You can start all systems with a single command using the provided script:
+
+```bash
+# Install all dependencies for all components
+npm run install-all
+
+# Start all systems (server and both clients)
+npm start
+```
+
+This will start:
+- The IoT Simulator Server (Express)
+- The IoT Simulator Client (React)
+- The Dashboard Client (React)
+
+Each system's console output will be color-coded for easy identification.
+
+## Manual Installation and Setup
+
+If you prefer to start each component individually:
 
 ### 1. IoT Device Simulator
 
@@ -79,6 +100,14 @@ IoT Simulator (Express) --publishes--> MQTT Broker <--subscribes-- Dashboard (Re
 ## User Interface
 
 Both applications are built using the ChanCC UI library, which provides modern and clean UI components for a consistent look and feel across the systems.
+
+## Available Scripts
+
+- `npm start` - Start all systems concurrently
+- `npm run install-all` - Install dependencies for all components
+- `npm run start-simulator-server` - Start only the simulator server
+- `npm run start-simulator-client` - Start only the simulator client
+- `npm run start-dashboard` - Start only the dashboard
 
 ## Technologies Used
 
