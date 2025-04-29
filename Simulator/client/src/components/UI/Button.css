@@ -1,0 +1,78 @@
+.cc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+  gap: 8px;
+}
+
+.cc-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Variants */
+.cc-button-primary {
+  background-color: #1677ff;
+  color: white;
+}
+
+.cc-button-primary:hover:not(:disabled) {
+  background-color: #0958d9;
+}
+
+.cc-button-secondary {
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #d9d9d9;
+}
+
+.cc-button-secondary:hover:not(:disabled) {
+  border-color: #1677ff;
+  color: #1677ff;
+}
+
+.cc-button-success {
+  background-color: #52c41a;
+  color: white;
+}
+
+.cc-button-success:hover:not(:disabled) {
+  background-color: #389e0d;
+}
+
+.cc-button-danger {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.cc-button-danger:hover:not(:disabled) {
+  background-color: #cf1322;
+}
+
+/* Sizes */
+.cc-button-small {
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+.cc-button-medium {
+  padding: 6px 16px;
+  font-size: 14px;
+}
+
+.cc-button-large {
+  padding: 8px 20px;
+  font-size: 16px;
+}
+
+/* Icon */
+.cc-button-icon {
+  display: flex;
+  align-items: center;
+} 

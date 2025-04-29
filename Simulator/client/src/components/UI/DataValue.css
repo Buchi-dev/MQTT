@@ -1,0 +1,67 @@
+.cc-data-value {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.cc-data-value:hover {
+  background-color: #f0f0f0;
+}
+
+.cc-data-icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1677ff;
+  font-size: 24px;
+}
+
+.cc-data-content {
+  flex: 1;
+}
+
+.cc-data-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.cc-data-reading {
+  display: flex;
+  align-items: baseline;
+}
+
+.cc-data-number {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.cc-data-unit {
+  font-size: 14px;
+  color: #666;
+  margin-left: 4px;
+}
+
+.cc-data-trend {
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+/* Trends */
+.cc-trend-up {
+  color: #52c41a;
+}
+
+.cc-trend-down {
+  color: #ff4d4f;
+}
+
+.cc-trend-stable {
+  color: #faad14;
+} 

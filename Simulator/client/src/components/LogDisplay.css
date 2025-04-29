@@ -1,0 +1,37 @@
+.log-display-card {
+  height: 100%;
+}
+
+.log-container {
+  height: 260px;
+  overflow-y: auto;
+  padding: 10px 0;
+  scrollbar-width: thin;
+  font-family: monospace;
+}
+
+.log-entry {
+  padding: 6px 0;
+  display: flex;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.log-time {
+  color: #888;
+  margin-right: 10px;
+  font-size: 12px;
+  min-width: 80px;
+}
+
+.log-message {
+  color: #333;
+  font-size: 12px;
+  word-break: break-word;
+}
+
+.no-logs {
+  color: #999;
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+} 
